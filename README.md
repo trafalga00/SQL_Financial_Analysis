@@ -29,5 +29,11 @@ This is a self-study project using fictional data, created for the purpose of le
 - SQLite / DB Browser for SQLite
 - Microsoft Excel
 
+## Nexus_query_1-3
+```sql
+SELECT product_name, category, unit_price, gross_margin_pct
+FROM nexus_products
+ORDER BY category, unit_price DESC;
+```
 
 ![query results](Nexus_query_1-3.png)
