@@ -38,3 +38,13 @@ ORDER BY category, unit_price DESC;
 ```
 
 ![query results](Nexus_query_1-3.png)
+
+## Query 11-14
+```sql
+SELECT order_id, order_date, total_amount, payment_method
+FROM nexus_orders
+WHERE is_returned = 'Y'
+ORDER BY total_amount DESC;
+```
+
+
