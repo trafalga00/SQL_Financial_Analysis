@@ -28,3 +28,6 @@ This is a self-study project using fictional data, created for the purpose of le
 ## Tools Used
 - SQLite / DB Browser for SQLite
 - Microsoft Excel
+
+
+![query results](Nexus_query_1-3.png)
