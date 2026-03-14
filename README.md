@@ -30,9 +30,7 @@ Retail sales analysis for Nexus Commerce, a fictional large-scale U.S. e-commerc
 - SQLite / DB Browser for SQLite
 - Microsoft Excel (Pivot Table, VLOOKUP)
 
-## Query 1: Product Pricing by Category
-## Query 2: Electronics Pricing Over $100
-## Query 3: Returned Orders Ranked by Amount
+## Query 1-3
 ```sql
 SELECT product_name, category, unit_price, gross_margin_pct
 FROM nexus_products
