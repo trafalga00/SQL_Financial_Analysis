@@ -31,6 +31,7 @@ Retail sales analysis for Nexus Commerce, a fictional large-scale U.S. e-commerc
 - Microsoft Excel (Pivot Table, VLOOKUP)
 
 ## Query 1-3
+- List of products sorted by category, then by unit price from highest to lowest, showing product name, category, unit price, and gross margin percentage.
 ```sql
 SELECT product_name, category, unit_price, gross_margin_pct
 FROM nexus_products
