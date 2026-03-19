@@ -103,13 +103,13 @@ ORDER BY c.state, total_revenue DESC;
 - Customer segment breakdown — showing average order value and discount rate per segment, sorted by highest average order value. Joins orders with customers to get segment info.
 
 ```spl
-SELECT 
-    c.customer_segment,
-    COUNT(DISTINCT o.customer_id) AS unique_customers,
-    COUNT(o.order_id) AS total_orders,
-    ROUND(AVG(o.total_amount), 2) AS avg_order_value,
-    ROUND(AVG(o.discount_rate), 1) AS avg_discount_rate,
-    SUM(o.gross_profit) AS total_gross_profit
+SELECT
+  c.customer_segment,
+  COUNT(DISTINCT o.customer_id) AS unique_customers,
+  COUNT(o.order_id) AS total_orders,
+  ROUND(AVG(o.total_amount), 2) AS avg_order_value,
+  ROUND(AVG(o.discount_rate), 1) AS avg_discount_rate,
+  SUM(o.gross_profit) AS total_gross_profit
 FROM nexus_orders o
 JOIN nexus_customers c ON o.customer_id = c.customer_id
 GROUP BY c.customer_segment
