@@ -102,7 +102,7 @@ ORDER BY c.state, total_revenue DESC;
 **Question:** How does customer segment affect average order value and discount rate?
 - Customer segment breakdown — showing average order value and discount rate per segment, sorted by highest average order value. Joins orders with customers to get segment info.
 
-```spl
+```sql
 SELECT
   c.customer_segment,
   COUNT(DISTINCT o.customer_id) AS unique_customers,
