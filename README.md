@@ -39,6 +39,7 @@ ORDER BY category, unit_price DESC;
 ```
 
 ## Query 11-14
+- List of returned orders, sorted by total amount from highest to lowest, showing order ID, date, total amount, and payment method.
 ```sql
 SELECT order_id, order_date, total_amount, payment_method
 FROM nexus_orders
