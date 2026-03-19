@@ -65,6 +65,7 @@ ORDER BY total_revenue DESC;
 
 ## Query 22-31
 **Question:** What is the year-over-year gross profit trend?
+
 -Year-over-year gross profit trend — showing total revenue, gross profit, and GP margin % by fiscal year, excluding cancelled orders.
 
 ```sql
