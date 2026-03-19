@@ -63,6 +63,41 @@ GROUP BY p.category
 ORDER BY total_revenue DESC;
 ```
 
+## Query 22-31
+**Question:** What is the year-over-year gross profit trend?
+-Year-over-year gross profit trend — showing total revenue, gross profit, and GP margin % by fiscal year, excluding cancelled orders.
+
+```sql
+SELECT 
+    STRFTIME('%Y', order_date) AS fiscal_year,
+    COUNT(order_id) AS total_orders,
+    SUM(total_amount) AS total_revenue,
+    SUM(gross_profit) AS total_gross_profit,
+    ROUND(SUM(gross_profit) * 100.0 / SUM(total_amount), 1) AS gp_margin_pct
+FROM nexus_orders
+WHERE order_status != 'Cancelled'
+GROUP BY fiscal_year
+ORDER BY fiscal_year;
+```
+
+## Query 33-41
+**Question:** Which states drive the most sales by category?
+-State and category sales breakdown — showing order count and revenue per state/category combo, sorted by state then highest revenue. Joins orders with both customers and products.
+
+```sql
+SELECT 
+    c.state,
+    p.category,
+    COUNT(o.order_id) AS order_count,
+    SUM(o.total_amount) AS total_revenue
+FROM nexus_orders o
+JOIN nexus_customers c ON o.customer_id = c.customer_id
+JOIN nexus_products p ON o.product_id = p.product_id
+GROUP BY c.state, p.category
+ORDER BY c.state, total_revenue DESC;
+```
+
+
 ## Query 46-55
 **Question:** How does customer segment affect average order value and discount rate?
 - Customer segment breakdown — showing average order value and discount rate per segment, sorted by highest average order value. Joins orders with customers to get segment info.
