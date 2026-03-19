@@ -116,3 +116,12 @@ GROUP BY c.customer_segment
 ORDER BY avg_order_value DESC;
 ```
 
+## What I Learned
+- Practiced multi-table JOINs to connect orders, customers, and products
+- Used GROUP BY with aggregate functions to answer business questions
+- Applied HAVING to filter grouped results
+- Gained confidence structuring queries from scratch
+
+## Next Steps
+- Upload Excel analysis (Pivot Table, VLOOKUP)
+- Visualize key findings with charts
