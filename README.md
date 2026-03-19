@@ -47,3 +47,20 @@ WHERE is_returned = 'Y'
 ORDER BY total_amount DESC;
 ```
 
+## Query 14-21
+**Question:** Which product categories generate the highest revenue?
+- Category-level sales summary — showing total orders, revenue, and average order value per category, sorted by highest revenue first. Joins orders with products to get the category info.
+
+```sql
+SELECT 
+    p.category,
+    COUNT(o.order_id) AS total_orders,
+    SUM(o.total_amount) AS total_revenue,
+    ROUND(AVG(o.total_amount), 2) AS avg_order_value
+FROM nexus_orders o
+JOIN nexus_products p ON o.product_id = p.product_id
+GROUP BY p.category
+ORDER BY total_revenue DESC;
+```
+
+
